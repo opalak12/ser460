@@ -27,7 +27,7 @@ function Navbar(){
                             <button onClick={() => handleNavigation('/login')}>Login</button>
                         </li>
                         <li>
-                            <button>Add meal</button>
+                            <button onClick={() => handleNavigation('/publish')}>Add meal</button>
                         </li>
                         <li>
                             <button>Subscription</button>
