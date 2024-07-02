@@ -1,12 +1,19 @@
 import React, { useState } from 'react';
 import "./styles.css";
 import { RxAvatar } from "react-icons/rx";
+import { useNavigate } from 'react-router-dom';
 
 function Navbar(){
     const [isOpen, setIsOpen] = useState(false);
+    const navigate = useNavigate();
+
     const toggleMenu = () => {
         setIsOpen(!isOpen);
       };
+      const handleNavigation = (path) => {
+        navigate(path);
+      };
+
     return (
         <div className='navbar'>
 
@@ -17,13 +24,13 @@ function Navbar(){
                 {isOpen && (
                     <ul className='dropdown-menu'>
                         <li>
-                            Option 1
+                            <button onClick={() => handleNavigation('/login')}>Login</button>
                         </li>
                         <li>
-                            Option 2
+                            <button>Add meal</button>
                         </li>
                         <li>
-                            Option 3
+                            <button>Subscription</button>
                         </li>
                     </ul>
                 )}
