@@ -30,7 +30,7 @@ function Navbar(){
                             <button onClick={() => handleNavigation('/publish')}>Add meal</button>
                         </li>
                         <li>
-                            <button>Subscription</button>
+                            <button onClick={() => handleNavigation('/subscribe')}>Subscription</button>
                         </li>
                     </ul>
                 )}
