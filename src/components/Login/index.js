@@ -16,23 +16,26 @@ function Login() {
       return;
     }
     localStorage.setItem('isLoggedIn', 'true');
-    navigate('/');
+    navigate('/search');
   }
 
   return (
     <div className='main-login'>
+
       <div>
         <label>Username</label>
         <input type="text" 
         value={username}
         onChange={(e)=> setUsername(e.target.value)}/>
       </div>
+
       <div>
         <label>Password</label>
         <input type="password" 
         value={password}
         onChange={(e) => setPassword(e.target.value)}/>
       </div>
+
       {error && <p className='error'>{error}</p>}
       <button type="submit" onClick={handleSubmit}>Submit</button>
     </div>
