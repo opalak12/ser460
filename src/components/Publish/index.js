@@ -22,7 +22,7 @@ function Publish() {
       type: timeOfMeal
     };
 
-    console.log("In publish", requestBody);
+    // console.log("In publish", requestBody);
 
     try {
       const response = await fetch(url, {
