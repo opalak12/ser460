@@ -8,15 +8,15 @@ function Publish() {
   const [timeToMake, setTimeToMake] = useState('');
 
   const handlePublish = async () => {
-    const url = 'http://localhost:8080/dietitian/create/meal';
+    const url = 'http://localhost:8080/meal/meals';
 
-    const cuisineId = getCuisineId(cuisineType);
+    const id = getCuisineId(cuisineType);
 
     const requestBody = {
       name: mealName,
       cuisine: {
-        cuisineId,
-        cuisineName: cuisineType
+        id,
+        name: cuisineType
       },
       timeToMake: parseInt(timeToMake, 10),
       type: timeOfMeal
