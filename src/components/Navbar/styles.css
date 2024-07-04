@@ -1,0 +1,36 @@
+
+.navbar {
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .profile-container {
+    position: relative;
+    display: flex; 
+    align-items: center; 
+  }
+  
+  .icon {
+    font-size: 1.9rem;
+    margin-left: auto; 
+    cursor: pointer; 
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 10px); 
+    right: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+  
+  }
+
+  .dropdown-menu li {
+    padding: 10px;
+    cursor: pointer;
+    background-color: black;
+  }
