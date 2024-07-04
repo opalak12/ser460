@@ -3,6 +3,7 @@ import "./styles.css";
 import { RxAvatar } from "react-icons/rx";
 import { useNavigate } from 'react-router-dom';
 
+
 function Navbar(){
     const [isOpen, setIsOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
