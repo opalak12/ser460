@@ -7,6 +7,7 @@ import Subscribe from './components/Subscribe';
 import DailyPlanPage from './components/DailyPlanPage';
 import LandingPage from './components/LandingPage';
 import WeeklyPlanPage from './components/WeeklyPlanPage';
+import Notifications from './components/Notifications';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/daily-plan" element={<DailyPlanPage />} />
       <Route path="/weekly-plan" element={<WeeklyPlanPage />} />
+      <Route path="/notifications" element={<Notifications />} />
     </Routes>
   </Router>
   );

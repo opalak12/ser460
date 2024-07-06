@@ -32,6 +32,9 @@ function Navbar(){
                     <li>
                     <button onClick={() => handleNavigation('/subscribe')}>Subscription</button>
                     </li>
+                    <li>
+                    <button onClick={() => handleNavigation('/notifications')}>Notifications</button>
+                    </li>
                 </ul>
                 )}
             </div>
