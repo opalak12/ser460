@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 function Subscribe() {
     const [cuisines, setCuisines] = useState([]);
@@ -37,7 +38,7 @@ function Subscribe() {
         setSubscriptionType(event.target.value);
     };
 
-    const handlePublish = async () => {
+    const handleSubscribe = async () => {
         if (!username || !cuisineType || !subscriptionType) {
             alert('Please fill in all fields.');
             return;
@@ -62,10 +63,34 @@ function Subscribe() {
         }
     };
 
+    const handleUnsubscribe = async () => {
+        if (!username || !cuisineType || !subscriptionType) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:8080/unsubscribe/${username}/${cuisineType}`, {
+                method: 'DELETE',
+            });
+            if (!response.ok) {
+                throw new Error('Failed to unsubscribe');
+            }
+            // Handle success if needed
+            console.log('Unsubscribe successful');
+        } catch (error) {
+            console.error('Error unsubscribing:', error);
+            // Handle error if needed
+        }
+    };
+
     return (
         <div className="parent-container">
             <div className="publish-container">
                 <div className="form-section">
+                <Link to="/">
+        <button>Back to Landing Page</button>
+      </Link>
                     <div className="form-group">
                         <label>Username:</label>
                         <input type="text" placeholder="Username" value={username} onChange={handleUsernameChange} />
@@ -90,7 +115,8 @@ function Subscribe() {
                         </select>
                     </div>
 
-                    <button className="publish-button" onClick={handlePublish}>Publish</button>
+                    <button className="action-button" onClick={handleSubscribe}>Subscribe</button>
+                    <button className="action-button" onClick={handleUnsubscribe}>Unsubscribe</button>
                 </div>
             </div>
         </div>
