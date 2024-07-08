@@ -12,6 +12,9 @@ function LandingPage() {
         <Link to="/weekly-plan">
           <button>Weekly Plan Publishing</button>
         </Link>
+        <Link to="/notifications">
+          <button>Notifications</button>
+        </Link>
       </div>
     </div>
   );
